@@ -1,6 +1,9 @@
 # bootcamp-cloud-aws
  Bootcamp Cloud AWS
 
+## Linux
+[Desafio de projeto 1 - diretórios, grupos, usuário e permissões](mount_host/linux/desafio_projeto1/)
+
 ---
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
