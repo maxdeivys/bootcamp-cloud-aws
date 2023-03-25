@@ -4,11 +4,13 @@ $install_basic = <<-SCRIPT
   apt-get install curl vim git software-properties-common unzip -y
 SCRIPT
 
+VAGRANT_EXPERIMENTAL="disks"
 
 Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/jammy64"
   config.vm.hostname = "dio-bootcamp-aws.localhost"
+  config.vm.disk :disk, size: "10GB", name: "extra_storage"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "dio-bootcamp-aws"

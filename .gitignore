@@ -3,6 +3,10 @@
 # General
 .vagrant/
 
+## vm project files
+mount_host/tmp
+files_aulas/
+
 # Log files (if you are creating logs in debug mode, uncomment this)
  *.log
 ###
