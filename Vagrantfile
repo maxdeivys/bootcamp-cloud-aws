@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/jammy64"
   config.vm.hostname = "dio-bootcamp-aws.localhost"
-  config.vm.disk :disk, size: "10GB", name: "extra_storage"
+  #config.vm.disk :disk, size: "10GB", name: "extra_storage"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "dio-bootcamp-aws"
@@ -30,5 +30,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell",
     inline: $install_basic
+
+  config.vm.provision "docker" do |d|
+
+  end
 
 end
