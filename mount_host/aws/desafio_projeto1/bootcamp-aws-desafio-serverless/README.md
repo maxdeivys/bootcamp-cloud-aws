@@ -31,3 +31,7 @@ completo e verboso
 Apenas um função e verboso
 
 ```$ serverless deploy -f insertItem --verbose```
+
+No final do lab não esquecer de remover os recursos
+
+```$ serverless remove --verbose``` 
