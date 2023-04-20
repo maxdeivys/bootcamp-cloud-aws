@@ -1,0 +1,64 @@
+service: bootcamp-aws-desafio-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: 
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:GetItem
+            - dynamodb:Scan
+          Resource: 
+            - arn:aws:dynamodb:us-east-1:312419170262:table/ItemTableNew
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - http:
+          path: /
+          method: get
+  insertItem:
+    handler: src/insertItem.handler
+    events:
+      - http:
+          path: /item
+          method: post
+  updateItem:
+    handler: src/updateItem.handler
+    events:
+      - http:
+          path: /items/{id}
+          method: put
+  fetchItem:
+    handler: src/fetchItem.handler
+    events:
+      - http:
+          path: /items/{id}
+          method: get
+  fetchItems:
+    handler: src/fetchItems.handler
+    events:
+      - http:
+          path: /items
+          method: get
+
+resources:
+ Resources:
+   ItemTableNew:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ItemTableNew
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
