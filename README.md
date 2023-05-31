@@ -8,6 +8,8 @@
 
 [Desafio de projeto 3 -  API Node.js com Serverless Framework em ambiente AWS](mount_host/aws/desafio_projeto1/bootcamp-aws-desafio-serverless)
 
+[Desafio de projeto 4 -  Autorização e gerenciamento de usuários para suas aplicações Web e Mobile com o Amazon Cognito](mount_host/aws/desafio_projeto2/)
+
 ---
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
