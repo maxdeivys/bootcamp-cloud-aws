@@ -76,7 +76,6 @@
       - Resources -> Add arn -> Selecionar o arn da tabela criada no DynamoDB -> Add
       - Review policy -> Name: ``putItem_policy`` -> Create policy
 
-
 ### Integrando o API Gateway com o Lambda backend
 
 - API Gateway Dashboard -> Selecionar a API criada -> Resources -> Selecionar o resource criado -> Action -> Create method - POST
@@ -87,23 +86,12 @@
 - Add Permission to Lambda Function?: sim
 - Actions -> Deploy API -> Deployment Stage -> New Stage [dev] -> Deploy
 
-### No POSTMAN
-
-- Add Request -> Method POST -> Copiar o endpoint gerado no API Gateway
-- Body -> Raw -> JSON -> Adicionar o seguinte body
-
-```
-{
-  "id": "003",
-  "price": 600
-}
-```
-
-- Send
-
 ### No Amazon Cognito
-
-- Cognito Dashboard -> Manage User Pools -> Create a User Pool -> Pool name [TestPool]
+> Cognito: Security, Identity, & Compliance
+>
+- Cognito Dashboard -> Manage User Pools -> Create a User Pool
+    > Amazon Cognito -> User pools -> Create user pool
+  - Pool name [TestPool]
 - How do you want your end users to sign in? - Email address or phone number -> Next Step
 - What password strength do you want to require?
 - Do you want to enable Multi-Factor Authentication (MFA)? Off -> Next Step
